@@ -1,0 +1,390 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+li {
+    float: left;
+}
+
+.userRecord{
+    margin-top: 8%;
+}
+
+.userList {
+    width: 30%;
+    margin-left: 3%
+}
+
+.displayUserRecords {
+    width: 60%;
+}
+.groupImg {
+    width :100%;
+    height:600px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li span {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.matchReportModal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 30px;
+    padding-right: 30px;
+    top: 20%;
+    width: 100%;
+    height: 59%;
+    overflow: auto;
+    background-color: rgb(187, 29, 29);
+    background-color: rgba(248, 242, 242, 0.9);
+}
+
+
+.voteColumn {
+    width: 115px
+}
+
+.bodyBackground {
+    background-image: url("../images/ball.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.login-container {
+    position: relative;
+    width: 470px;
+    margin: 225px auto;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#output {
+    position: absolute;
+    width: 300px;
+    top: -75px;
+    left: 0;
+    color: #fff;
+}
+
+#output.alert-success {
+    background: rgb(25, 204, 25);
+}
+
+#output.alert-danger {
+    background: rgb(228, 105, 105);
+}
+
+
+.login-container::before,
+.login-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3.5px;
+    left: 0;
+    background: #fff;
+    z-index: -1;
+    -webkit-transform: rotateZ(4deg);
+    -moz-transform: rotateZ(4deg);
+    -ms-transform: rotateZ(4deg);
+    border: 1px solid #ccc;
+
+}
+
+.login-container::after {
+    top: 5px;
+    z-index: -2;
+    -webkit-transform: rotateZ(-2deg);
+    -moz-transform: rotateZ(-2deg);
+    -ms-transform: rotateZ(-2deg);
+
+}
+
+.avatar {
+    width: 151px;
+    height: 162px;
+    margin: 10px auto 30px;
+    border-radius: 100%;
+    border: 2px solid #aaa;
+    background-size: cover;
+    background-image: url("../images/iplLogo.png")
+}
+
+.form-box input {
+    width: 100%;
+    padding: 33px;
+    text-align: center;
+    height: 40px;
+    border: 1px solid #ccc;
+    ;
+    background: #fafafa;
+    transition: 0.2s ease-in-out;
+}
+
+.form-box input:focus {
+    outline: 0;
+    background: #eee;
+}
+
+.form-box input[type="text"] {
+    border-radius: 5px 5px 0 0;
+    text-transform: lowercase;
+}
+
+.form-box input[type="password"] {
+    border-radius: 0 0 5px 5px;
+    border-top: 0;
+}
+
+.form-box button.login {
+    margin-top: 15px;
+    padding: 10px 20px;
+    height: 56px;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    width: 120px;
+}
+td{
+    vertical-align: middle !important;
+}
+.disableButt {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.custom-modal {
+    display: block;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 30px;
+    padding-right: 30px;
+    /* Location of the box */
+    left: 28%;
+    top: 40%;
+    width: 40%;
+    height: 40%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(187, 29, 29);
+    /* Fallback color */
+    background-color: rgba(248, 242, 242, 0.9);
+    /* Black w/ opacity */
+}
+
+.team1 {
+    padding-top: 20px;
+    padding-left: 20px;
+    display: block;
+}
+
+.team2 {
+    padding-top: 20px;
+    padding-right: 20px;
+    display: block
+}
+
+.vs {
+    width: 44px;
+    height: 200px;
+    padding-top: 97px;
+    padding-left: 5px;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.checkBox {
+    margin-left: 95px !important;
+    margin-top: 12px !important;
+}
+
+.clearFix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.singleVote {
+    margin-left: 133px !important;
+}
+
+.spanSingle {
+    margin-right: 46px;
+}
+
+.radioButtVote {
+    margin-top: 10px;
+}
+
+.confirmVote {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 2px 0px 148px;
+    cursor: pointer;
+}
+
+.rounded-circle {
+    border-radius: 8%!important;
+}
+
+.d-block {
+    display: block!important;
+}
+
+/* .img-fluid {
+    max-width: 100%;
+    height: auto;
+} */
+
+.user-profile-image {
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.mx-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+.mb-4 {
+    margin-bottom: 3.5rem!important;
+}
+
+.modal-dialog {
+    width: 1000px;
+    margin: 30px auto;
+}
+
+.fixed-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+.badge-money {
+	position: absolute;
+    background-color: white;
+    font-size: medium;
+    color: white;
+    right: 46px;
+    border-top-right-radius: 15px;
+    width:60px;
+}
+
+.float-right {
+	    float: right; !important
+}
+
+.bigAndBoldClass { 
+font-size: 110%;
+    color: #4682B4;
+    background-color: cornflowerblue;
+}
+
+.highlightClass{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.tableRow {
+}
+
+.bigAndBoldClassDouble { 
+font-size: 110%;
+    color: #008080;
+    background-color: #66CDAA;
+}
+
+.highlightClassDouble {
+    background-color: #66CDAA;
+    color: white;
+}
+
+.tableRowDouble {
+}

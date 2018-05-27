@@ -1,0 +1,37 @@
+<div>
+    <ul class="fixed-nav-bar">
+        <li ng-click="goToHome()">
+            <span>Home</span>
+        </li>
+        <li>
+            <span>Reports</span>
+        </li>
+        <li ng-click="userReport()">
+            <span>UserReport</span>
+        </li>
+        <li ng-click="logout()">
+            <span>Logout</span>
+        </li>
+        <li ng-click="goToRulesPage()">
+            <span>Rules</span>
+        </li>
+    </ul>
+</div>
+<marquee><div style="margin-top:48px"> <img src="https://thecricketlounge.com/wp-content/uploads/2015/05/1.gif" height="80" width="150" style="margin-top:10px;"><p style="width:40%;font-size:24px;display: inline;"> Total Points :  {{totalAmt}} <p></div></marquee>
+<div style="margin-top:48px">
+	
+    <div google-chart chart="myChartObject" style="height: 600px; width: 80%; float: left; margin-left: -95px;"></div>
+	
+	<div><p><h2>Leaderboard</h2></p>
+		<p><h4>Most wins</h4></p>
+		<div google-chart chart="myTableObject" style="width: 20%; float: left;"></div>
+		<p><h4 style="display: inline-block; clear: both;">Most double wins</h4></p>
+		<div google-chart chart="myDoubleTableObject" style="width: 20%; float: left;"></div>	
+	</div>
+	
+	
+	<br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<h2>Per match points</h2>
+	<div google-chart chart="myMatchChartObject" style="height: 600px; width: 80%; float: left; margin-left: -95px;"></div>
+</div>

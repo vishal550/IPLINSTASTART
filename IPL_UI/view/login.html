@@ -1,0 +1,17 @@
+<div ng-class="backgroundFlag ? 'bodyBackground' : ''" class="container">
+    <div class="login-container">
+        <div id="output"></div>
+        <div class="avatar"></div>
+        <div class="form-box">
+            <form>
+                <input name="user" type="text" ng-model="userId" placeholder="username">
+                <input type="password" ng-model="password" placeholder="password">
+                <button class="btn btn-info btn-block login" type="submit" ng-click="onSubmit()">Login</button>
+            </form>
+            <div ng-show="alert" id="myModal" class="custom-modal">
+                <span class="close" ng-click="alertClose()">&times;</span>
+                <span>{{message}}</span>
+            </div>
+        </div>
+    </div>
+</div>

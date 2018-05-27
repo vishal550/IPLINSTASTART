@@ -1,0 +1,42 @@
+<div id="myModal" class="modal-body">
+    <!-- <span class="close" ng-click="closeModal()">&times;</span> -->
+    <div class='clearFix'>
+        <div class='floatLeft'>
+            <img class="team1" src="images/{{currentMatchTeam1}}.PNG" alt="" height="200" width="200">
+            <input class="checkBox" type="radio" ng-model="selectTeam" value="{{currentMatchTeam1}}">
+            <span>
+                <b>{{currentMatchTeam1}}</b>
+            </span>
+        </div>
+        <div class='floatLeft vs'>
+            <span class='vs'>
+                <b>VS</b>
+            </span>
+        </div>
+        <div class='floatLeft'>
+            <img class="team2" src="images/{{currentMatchTeam2}}.PNG" alt="Smiley face" height="200" width="200">
+            <input class="checkBox" type="radio" ng-model="selectTeam" value="{{currentMatchTeam2}}">
+            <span>
+                <b>{{currentMatchTeam2}}</b>
+            </span>
+        </div>
+    </div>
+    <div class='radioButtVote abc'>
+        <input class='singleVote' type="radio" ng-model="voteType" value="false">
+        <span class="spanSingle">
+            <b>SINGLE</b>
+        </span>
+        <input type="radio" ng-model="voteType" value="true">
+        <span>
+            <b>DOUBLE</b>
+        </span>
+    </div>
+
+    <div ng-show="alert" id="myModal">
+        <span>{{message}}</span>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-click="saveVote()">Save Vote</button>
+    <button class="btn btn-warning" ng-click="cancel()">Close</button>
+</div>

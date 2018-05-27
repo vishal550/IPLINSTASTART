@@ -1,0 +1,111 @@
+<div>
+    <ul class="fixed-nav-bar">
+        <li>
+            <span>Home</span>
+        </li>
+        <li ng-click="reports()">
+            <span>Reports</span>
+        </li>
+        <li ng-click="userReport()">
+            <span>UserReport</span>
+        </li>
+        <li ng-click="goToRulesPage()">
+            <span>Rules</span>
+        </li>
+		<li style = "float:right" ng-click="logout()">
+            <span>Logout</span>
+        </li>
+    </ul>
+</div>
+<div style="margin-top:48px">
+    <div class='groupImg'>
+        <img src="images/{{currentImg}}.JPG" alt="" height="600" width="100%">
+    </div>
+	<h1>Upcoming</h1>
+	<br/>
+    <table id="voting-match-list" class="table table-bordered table-striped">
+        <thead style="background:#D3D3D3">
+            <tr>
+                <th style="width:5%">Sr.No.</th>
+                <th style="width:10%">Team 1</th>
+                <th style="width:10%">Team 2</th>
+                <th style="width:15%">Venue</th>
+                <th style="width:10%">Match Day</th>
+                <th style="width:10%">Match Date</th>
+                <th style="width:10%">Match Time</th>
+                <th style="width:10%">Vote</th>
+                <th style="width:10%">Your Vote</th>
+                <th style="width:5%">Winner</th>
+                <th style="width:5%">MatchReport</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in matchResult.upcoming | orderBy:'id' ">
+                <td>{{x.id}}</td>
+                <td>
+                    <b>{{x.team1}}</b>
+                </td>
+                <td>
+                    <b>{{x.team2}}</b>
+                </td>
+                <td class='voteColumn'>{{x.h_a}}</td>
+                <td class='voteColumn'>{{x.match_day}}</td>
+                <td class='voteColumn'>{{x.match_date.split('T')[0]}}</td>
+                <td class='voteColumn'>{{x.match_time}}</td>
+                <td class='voteColumn'>
+                    <button class='button' ng-disabled="!x.is_allowed" ng-click="openModal(x.id, x.team1, x.team2)" ng-class="x.is_allowed ? 'enableButt' : 'disableButt'">{{x.is_allowed ? 'Voting Open' : 'Voting Closed'}}</button>
+                </td>
+                <td>{{x.vote}} - {{x.vote ? (x.vote_type === true ? 'Double' : (x.vote_type === false ? 'Single': '')) : ''}}</td>
+                <td>{{x.winner}}</td>
+                <td class='voteColumn'>
+                    <button class='button' ng-click="openModalForReport(x.id)">View Report</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	
+	<br/>
+	<br/>
+	<h1>Results</h1>
+	<br/>
+	<table id="done-voting-match-list" class="table table-bordered table-striped">
+        <thead style="background:#D3D3D3">
+            <tr>
+                <th style="width:5%">Sr.No.</th>
+                <th style="width:10%">Team 1</th>
+                <th style="width:10%">Team 2</th>
+                <th style="width:15%">Venue</th>
+                <th style="width:10%">Match Day</th>
+                <th style="width:10%">Match Date</th>
+                <th style="width:10%">Match Time</th>
+                <th style="width:10%">Vote</th>
+                <th style="width:10%">Your Vote</th>
+                <th style="width:5%">Winner</th>
+                <th style="width:5%">MatchReport</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in matchResult.results | orderBy:'id' ">
+                <td>{{x.id}}</td>
+                <td>
+                    <b>{{x.team1}}</b>
+                </td>
+                <td>
+                    <b>{{x.team2}}</b>
+                </td>
+                <td class='voteColumn'>{{x.h_a}}</td>
+                <td class='voteColumn'>{{x.match_day}}</td>
+                <td class='voteColumn'>{{x.match_date.split('T')[0]}}</td>
+                <td class='voteColumn'>{{x.match_time}}</td>
+                <td class='voteColumn'>
+                    <button class='button' ng-disabled="!x.is_allowed" ng-click="openModal(x.id, x.team1, x.team2)" ng-class="x.is_allowed ? 'enableButt' : 'disableButt'">{{x.is_allowed ? 'Voting Open' : 'Voting Closed'}}</button>
+                </td>
+                <td>{{x.vote}} - {{x.vote ? (x.vote_type === true ? 'Double' : (x.vote_type === false ? 'Single': '')) : ''}}</td>
+                <td>{{x.winner}}</td>
+                <td class='voteColumn'>
+                    <button class='button' ng-click="openModalForReport(x.id)">View Report</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
